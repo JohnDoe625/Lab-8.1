@@ -75,4 +75,11 @@ router.post('/readCustomerInfoAndRespond', function(req, res, next) {
 
 });
 
+//REST version (Lab 8.2): returns JSON instead of HTML
+router.post('/api/customer', function(req, res, next) {
+  const name = req.body.name;
+  const email = req.body.email;
+  res.json({ message: "Welcome " + name, email: email });
+});
+
 module.exports = router;
